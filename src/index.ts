@@ -1,5 +1,5 @@
 export * from './array';
-export * from './classes';
+export * from './structures';
 export * from './date';
 export * from './function';
 export * from './math';

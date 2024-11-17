@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.1.0]
 
 ### New Features
 - Added the `Deque` class to implement a double-ended queue data structure.
@@ -21,3 +21,9 @@
 ### Changes
 - Improved documentation for existing functions and classes.
 - Optimized the performance of some mathematical functions.
+
+## [1.1.1]
+
+### Changes
+- Corrected version from `unreleased` to `1.1.0`.
+- Fixed export issue in `package.json` to ensure files can be used correctly.

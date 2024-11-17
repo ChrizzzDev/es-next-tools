@@ -18,7 +18,17 @@
     "lib": "dist"
   },
   "exports": {
-    ".": "./dist"
+    ".": "./dist/index.js",
+    "./array": "./dist/array/index.js",
+    "./date": "./dist/date/index.js",
+    "./function": "./dist/function/index.js",
+    "./math": "./dist/math/index.js",
+    "./object": "./dist/object/index.js",
+    "./promise": "./dist/promise/index.js",
+    "./security": "./dist/security/index.js",
+    "./string": "./dist/string/index.js",
+    "./structures": "./dist/structures/index.js",
+    "./validation": "./dist/validation/index.js"
   },
   "keywords": ["utility", "functions", "typescript", "javascript", "async", "array", "math", "date", "objects", "promises", "strings", "string-utilities", "functional"],
   "author": "ChrizzzDev",
