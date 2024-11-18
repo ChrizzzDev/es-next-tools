@@ -1,11 +1,16 @@
 /**
  * Represents a node in a binary search tree.
+ * @template T The type of value stored in the node.
  */
 class TreeNode<T> {
   value: T;
   left: TreeNode<T> | null = null;
   right: TreeNode<T> | null = null;
 
+  /**
+   * Creates a new node.
+   * @param {T} value - The value to be stored in the node.
+   */
   constructor(value: T) {
     this.value = value;
   }

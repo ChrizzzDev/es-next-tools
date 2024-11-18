@@ -1,7 +1,7 @@
 {
   "name": "es-next-tools",
   "module": "dist/index.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "build": "tsc"
@@ -33,7 +33,7 @@
   "keywords": ["utility", "functions", "typescript", "javascript", "async", "array", "math", "date", "objects", "promises", "strings", "string-utilities", "functional"],
   "author": "ChrizzzDev",
   "license": "MIT",
-  "description": "Useful package",
+  "description": "A comprehensive utility library for JavaScript and TypeScript that provides a wide range of functions for common programming tasks, including mathematical operations, date manipulations, array and object handling, string utilities, and more.",
   "repository": {
     "url": "https://github.com/ChrizzzDev/es-next-tools",
     "directory": "https://github.com/ChrizzzDev/es-next-tools"

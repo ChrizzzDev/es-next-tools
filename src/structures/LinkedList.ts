@@ -28,12 +28,11 @@ export class LinkedList<T> {
 
   /**
    * Appends a value to the end of the linked list.
-   * @param {Node<T> | T} value - The value to append.
+   * @param {T} value - The value to append.
    * @returns {LinkedList<T>} The linked list instance for chaining.
    */
   append(value: T): this {
     const newNode = new Node(value);
-
     if (!this.head) {
       this.head = newNode;
     } else {
@@ -43,12 +42,11 @@ export class LinkedList<T> {
       }
       current.next = newNode;
     }
-
     return this;
   }
 
   /**
-   * Check if the linked list contains a specific valuel
+   * Checks if the linked list contains a specific value.
    * @param {T} value - The value to check for.
    * @returns {boolean} True if the value is in the linked list, false otherwise.
    */
@@ -79,7 +77,7 @@ export class LinkedList<T> {
     let current = this.head;
     while (current.next) {
       if (current.next.value === value) {
-        current.next = current.next.next
+        current.next = current.next.next;
         return true;
       }
       current = current.next;
@@ -95,7 +93,6 @@ export class LinkedList<T> {
    */
   insertAt(value: T, index: number): this {
     const newNode = new Node(value);
-
     if (index === 0) {
       newNode.next = this.head;
       this.head = newNode;
@@ -140,5 +137,22 @@ export class LinkedList<T> {
     const values: T[] = JSON.parse(data);
     this.head = null; // Clear the current list
     values.forEach(value => this.append(value)); // Append each value
+  }
+
+  /**
+   * Searches for a value in the linked list and returns its index.
+   * @param {T} value - The value to search for.
+   * @returns {number} The index of the value, or -1 if not found.
+   */
+  search(value: T): number {
+    let curr = this.head;
+    let index = 0;
+
+    while (curr) {
+      if (curr.value === value) return index;
+      curr = curr.next;
+      index++;
+    }
+    return -1;
   }
 }

@@ -32,7 +32,7 @@ export class Queue<T> {
   }
 
   /**
-   * Returns the numbers of items in the queue.
+   * Returns the number of items in the queue.
    * @returns {number} The size of the queue.
    */
   size(): number {
@@ -56,12 +56,12 @@ export class Queue<T> {
   }
 
   /**
-   * Checks if the priority queue contains a specific item.
+   * Checks if the queue contains a specific item.
    * @param {T} item - The item to check for.
-   * @returns {boolean} True if the item is in the priority queue, false otherwise.
+   * @returns {boolean} True if the item is in the queue, false otherwise.
    */
   contains(item: T): boolean {
-    return this.items.includes(item); 
+    return this.items.includes(item);
   }
 
   /**
@@ -89,4 +89,4 @@ export class Queue<T> {
   deserialize(data: string): void {
     this.items = JSON.parse(data);
   }
-};
+}

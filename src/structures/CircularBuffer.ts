@@ -1,3 +1,7 @@
+/**
+ * Represents a circular buffer data structure.
+ * @template T The type of elements in the circular buffer.
+ */
 export class CircularBuffer<T> {
   private buffer: T[];
   private head: number = 0;
@@ -5,6 +9,10 @@ export class CircularBuffer<T> {
   private size: number = 0;
   private capacity: number;
 
+  /**
+   * Creates a circular buffer with a specified capacity.
+   * @param {number} capacity - The maximum number of items the buffer can hold.
+   */
   constructor(capacity: number) {
     this.capacity = capacity;
     this.buffer = new Array(capacity);

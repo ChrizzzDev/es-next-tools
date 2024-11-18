@@ -2,7 +2,7 @@
  * Creates an object composed of the picked object properties.
  * @param {T} object - The source object.
  * @param {K[] | ((key: string, value: any) => boolean)} keysOrPredicate - An array of property names to pick or a predicate function.
- * @returns {Partial<T>} A new object with the picked properties.
+ * @returns A new object with the picked properties.
  * @template T, K
  * @example
  * const obj = { a: 1, b: 2, c: 3, d: 4 };

@@ -17,14 +17,21 @@ export class PriorityQueue<T> {
    */
   enqueue(item: T, priority: number = 1): PriorityQueue<T> {
     const newItem = { value: item, priority };
-    let index = this.items.findIndex((i) => i.priority > priority);
-    if (index === -1) {
-      this.items.push(newItem);
-    } else {
-      this.items.splice(index, 0, newItem);
-    }
+    this.items.push(newItem);
+    this.bubbleUp();
 
     return this;
+  }
+
+  private bubbleUp(): void {
+    let index = this.items.length - 1;
+    while (index > 0) {
+      const parentIndex = (index - 1) / 2 | 0;
+      if (this.items[index].priority >= this.items[parentIndex].priority) break;
+
+      [this.items[index], this.items[parentIndex]] = [this.items[parentIndex], this.items[index]];
+      index = parentIndex;
+    }
   }
 
   /**
@@ -33,11 +40,51 @@ export class PriorityQueue<T> {
    * @throws {Error} If the priority queue is empty.
    */
   dequeue(): T {
-    if (this.isEmpty()) {
-      throw new Error('Priority queue is empty');
+    if (this.isEmpty()) throw new Error('Priority queue is empty');
+    const top = this.items[0];
+    const bottom = this.items.pop();
+
+    if (this.items.length > 0 && bottom) {
+      this.items[0] = bottom;
+      this.bubbleDown();
     }
-    return this.items.shift()!.value;
+
+    return top.value;
   };
+
+  private bubbleDown(): void {
+    let index = 0;
+    const length = this.items.length;
+    const element = this.items[0];
+
+    while (true) {
+      let leftChildIndex = 2 * index + 1;
+      let rightChildIndex = 2 * index + 2;
+      let swap = null;
+
+      if (leftChildIndex < length) {
+        const leftChild = this.items[leftChildIndex];
+        if (leftChild.priority < element.priority) {
+          swap = leftChildIndex;
+        }
+      }
+
+      if (rightChildIndex < length) {
+        const rightChild = this.items[rightChildIndex];
+        if (
+          (swap === null && rightChild.priority < element.priority) ||
+          (swap !== null && rightChild.priority < this.items[swap].priority)
+        ) {
+          swap = rightChildIndex;
+        }
+      }
+
+      if (swap === null) break;
+      this.items[index] = this.items[swap];
+      this.items[swap] = element;
+      index = swap;
+    }
+  }
 
   /**
    * Returns the number of items in the priority queue.
@@ -132,7 +179,7 @@ export class PriorityQueue<T> {
 
   /**
    * Deserializes a JSON string to populate the priority queue.
-   * @param data - The JSON string to deserialize.
+   * @param {string} data - The JSON string to deserialize.
    */
   deserialize(data: string): void {
     this.items = JSON.parse(data);

@@ -5,6 +5,10 @@ export class UnionFind {
   private parent: number[];
   private rank: number[];
 
+  /**
+   * Creates a Union-Find structure with a specified size.
+   * @param {number} size - The number of elements in the structure.
+   */
   constructor(size: number) {
     this.parent = Array.from({ length: size }, (_, i) => i);
     this.rank = Array(size).fill(1);

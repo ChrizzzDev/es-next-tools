@@ -1,3 +1,6 @@
+/**
+ * Represents a graph data structure using an adjacency list.
+ */
 export class Graph {
   private adjacencyList: Map<string, string[]> = new Map();
 
@@ -19,35 +22,8 @@ export class Graph {
     this.adjacencyList.get(vertex2)?.push(vertex1); // For undirected graph
   }
 
-  getNeighbors(vertex: string): string[] | undefined {
-    return this.adjacencyList.get(vertex);
-  }
-
   /**
-   * Performs a depth-first search (DFS).
-   * @param {string} start - The starting vertex.
-   * @returns {string[]} The vertices visited in DFS order.
-   */
-  dfs(start: string): string[] {
-    const visited: Set<string> = new Set();
-    const result: string[] = [];
-
-    const dfsHelper = (vertex: string) => {
-      visited.add(vertex);
-      result.push(vertex);
-      this.adjacencyList.get(vertex)?.forEach(neighbor => {
-        if (!visited.has(neighbor)) {
-          dfsHelper(neighbor);
-        }
-      });
-    };
-
-    dfsHelper(start);
-    return result;
-  }
-
-  /**
-   * Performs a breadth-first search (BFS).
+   * Performs a breadth-first search (BFS) starting from a given vertex.
    * @param {string} start - The starting vertex.
    * @returns {string[]} The vertices visited in BFS order.
    */
