@@ -10,7 +10,7 @@
  * const merged = mergeDeep(obj1, obj2);
  * // { a: { b: 2, d: 4 }, c: 3, e: 5 }
  */
-export function mergeDeep<T extends Record<string, any>>(target: T, ...sources: Partial<T>[]): T {
+export function mergeDeep<T extends Record<string, any>, S extends Record<string, any>[]>(target: T, ...sources: Partial<S>): T {
   const output = { ...target };
 
   if (!sources.length) return target;
@@ -22,7 +22,7 @@ export function mergeDeep<T extends Record<string, any>>(target: T, ...sources: 
         if (!(key in output)) {
           Object.assign(output, { [key]: source[key] });
         } else {
-          output[key] = mergeDeep(output[key], source[key]);
+          output[key as keyof T] = mergeDeep(output[key], source[key]);
         }
       } else {
         Object.assign(output, { [key]: source[key] });
@@ -30,6 +30,6 @@ export function mergeDeep<T extends Record<string, any>>(target: T, ...sources: 
     }
   }
 
-  return sources.length ?
-    mergeDeep(output, ...sources) : output;
+  return sources.length 
+    ? mergeDeep(output, ...sources) : output;
 }
