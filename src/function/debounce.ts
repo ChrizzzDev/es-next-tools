@@ -11,7 +11,7 @@ import type { AnyFunction } from '..';
  * // Calling debouncedFn multiple times rapidly will only log once after 300ms of inactivity
  */
 export function debounce<T extends AnyFunction>(fn: T, wait: number): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout;
+  let timeout: ReturnType<typeof setTimeout>;
   return (...args: Parameters<T>): void => {
     clearTimeout(timeout);
     timeout = setTimeout(() => fn(...args), wait);
