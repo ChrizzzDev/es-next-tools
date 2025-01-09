@@ -2,7 +2,7 @@
  * Calculates the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
  * @param {number} a - The first number.
  * @param {number} b - The second number.
- * @returns {number} The greatest common divisor of a and b.
+ * @returns The greatest common divisor of a and b.
  * @example
  * const result = gcd(48, 18); // 6
  */

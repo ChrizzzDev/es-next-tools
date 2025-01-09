@@ -1,5 +1,6 @@
 export * from './clamp';
 export * from './comb';
+export * from './dist';
 export * from './dtr';
 export * from './factorial';
 export * from './gcd';
@@ -7,5 +8,8 @@ export * from './lcm';
 export * from './lerp';
 export * from './mean';
 export * from './median';
+export * from './mode';
 export * from './perm';
+export * from './range';
 export * from './rtd';
+export * from './statistics';

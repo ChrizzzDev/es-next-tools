@@ -7,6 +7,7 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@types/bun": "^1.1.16",
     "@types/node": "^22.7.4",
     "mitata": "^1.0.10"
   },

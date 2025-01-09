@@ -1,3 +1,10 @@
+/**
+ * Calculates the median of a list of numbers.
+ * @param {...number[]} numbers - The numbers to calculate the median of.
+ * @returns The median of the numbers.
+ * @example
+ * median(1, 2, 3, 4, 5); // 3
+ */
 export function median(...numbers: number[]): number {
   let sorted: number[] = [];
   if (numbers.length <= 2) sorted = numbers;

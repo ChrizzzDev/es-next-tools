@@ -1,3 +1,10 @@
+/** 
+ * Calculates the mode(s) of a list of numbers. 
+ * @param {...number[]} numbers - The numbers to calculate the mode of. 
+ * @returns {number[]} An array of the most frequent numbers (modes). 
+ * @example 
+ * mode(1, 2, 2, 3, 4); // [2]
+*/
 export function mode(...numbers: number[]): number[] {
   const frequency: { [key: number]: number } = {};
   let maxFreq = 0;
