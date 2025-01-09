@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.0]
+## [1.1.0] 2024-11-17
 
 ### New Features
 - Added the `Deque` class to implement a double-ended queue data structure.
@@ -22,8 +22,29 @@
 - Improved documentation for existing functions and classes.
 - Optimized the performance of some mathematical functions.
 
-## [1.1.1]
+## [1.1.1] 2024-11-17
 
 ### Changes
 - Corrected version from `unreleased` to `1.1.0`.
 - Fixed export issue in `package.json` to ensure files can be used correctly.
+
+## [1.2.0] - 2025-01-09
+
+### New Features
+- **New function**: `mean` - Added a function to calculate the average of a list of numbers.
+- **New function**: `median` - Added a function to calculate the median of a list of numbers.
+- **New function**: `mode` - Added a function to calculate the mode(s) of a list of numbers.
+- **New function**: `perm` - Added a function to calculate the number of permutations.
+- **New function**: `range` - Added a function to generate a range of numbers from start to end.
+
+### Improved
+- **Function**: `omit` - Improved the `omit` function to support both an array of keys and a predicate function.
+- **Function**: `mergeDeep` - Completely reworked the `mergeDeep` function to support deep merging of multiple objects with enhanced type safety.
+- **Function**: `invert` - Reworked the `invert` function to correctly return types and made some improvisational changes.
+
+### Fixed
+- **Type Safety**: Enhanced type definitions across various functions to ensure accurate return types and compatibility.
+
+### Changes
+- Improved documentation for existing functions.
+- Some math functions were not exported correctly in previous versions. This issue has been fixed.
