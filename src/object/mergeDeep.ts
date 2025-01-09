@@ -1,9 +1,8 @@
 /**
  * Deeply merges multiple objects into a target object.
  * @param {T} target - The target object to merge into.
- * @param {...Partial<T>[]} sources - The source objects to merge from.
- * @returns {T} The merged object.
- * @template T
+ * @param {...Partial<S>[]} sources - The source objects to merge from.
+ * @returns The merged object.
  * @example
  * const obj1 = { a: { b: 2 }, c: 3 };
  * const obj2 = { a: { d: 4 }, e: 5 };
